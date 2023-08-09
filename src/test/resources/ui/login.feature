@@ -22,7 +22,7 @@ Feature: Login feature
     Then I should see an error message
 
 
-
+   @testing_GA
   Scenario: Login with valid credentials parameters
     When I enter username as "duotech2023" and password as "duotech"
     Then I should be able to login
