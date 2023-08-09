@@ -1,5 +1,5 @@
-name: Example Test Run
-run-name: Testing a single test
+name: Smoke Tests
+run-name: Running Smoke Tests
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  Run-A-Single-UI-Test:
+  Run-A-Smoke-Test:
     runs-on: ubuntu-latest
     steps:
       - name: Clone the repository
@@ -39,8 +39,8 @@ jobs:
           sudo chown root:root /usr/bin/chromedriver
           sudo chmod +x /usr/bin/chromedriver
 
-      - name: Run A Single Tests
-        run: mvn test
+      - name: Run Smoke Tests
+        run: mvn test -D cucumber.filter.tags=@smoke
 
 
 #      - name: Upload Test Results
