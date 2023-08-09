@@ -1,0 +1,20 @@
+name: GitHub Actions Demo
+run-name: Testing GitHub Actions
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  example-simple-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Step1. Print something out - This job is automatically triggered by a push event."
+      - run: echo "Step2. Another example of a step"
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: echo "Step 4. The repository has been cloned to the runner."
+      - name: List files in the repository
+        run: ls
+      - run: echo "Job is finished."
